@@ -34,6 +34,7 @@ public class SecurityConfig {
                     authorize.requestMatchers("/api/auth/**",
                                     "/css/**", "/js/**", "/assets/**", "/*.html", "/logo.png")
                             .permitAll();
+                    authorize.requestMatchers("/product/all").permitAll();
                     authorize.anyRequest().authenticated();
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
